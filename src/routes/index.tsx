@@ -100,7 +100,7 @@ function Header() {
         <nav className="border-t px-5 py-4 lg:hidden" style={{ backgroundColor: "var(--qh-cream)", borderColor: "rgba(0,0,0,0.08)" }} aria-label="Mobile">
           <div className="flex flex-col gap-1">
             {NAV.map((n) => (
-              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-base font-medium">
+              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="qh-tap rounded-lg px-3 py-2.5 text-base font-medium">
                 {n.label}
               </a>
             ))}

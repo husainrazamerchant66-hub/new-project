@@ -49,7 +49,7 @@ export default function Amenities() {
           {ITEMS.map((a) => (
             <div key={a.title} className="reveal">
               <span
-                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl"
+                className="qh-ico inline-flex h-11 w-11 items-center justify-center rounded-2xl"
                 style={{ backgroundColor: "var(--qh-pine)", color: "#fff" }}
               >
                 <a.icon size={20} />
