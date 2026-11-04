@@ -4,6 +4,13 @@ import { useReveal } from "./use-reveal";
 
 export const WHATSAPP_NUMBER = "919933998880";
 
+function guestsLabel(g: string) {
+  if (g === "2") return "2 guests";
+  if (g === "4") return "3 – 4 guests";
+  if (g === "6") return "5 – 6 guests";
+  return "Group · 7+ guests";
+}
+
 const OTA_LINKS = [
   { label: "Booking.com", href: "https://www.booking.com/hotel/in/quinte-hills-residency.html" },
   { label: "MakeMyTrip", href: "https://www.makemytrip.com/hotels/quinte_hills_residency-details-mahabaleshwar.html" },
