@@ -17,13 +17,39 @@ export default function Contact() {
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState("2");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [sent, setSent] = useState(false);
+  const [missing, setMissing] = useState(false);
 
   const nights = useMemo(() => {
     if (!checkIn || !checkOut) return 0;
     const d = Math.round((new Date(checkOut).getTime() - new Date(checkIn).getTime()) / 86400000);
     return Number.isFinite(d) && d > 0 ? d : 0;
   }, [checkIn, checkOut]);
+
+  const waHref = useMemo(() => {
+    const lines = [
+      "Hi Quinte Hills! I'd like to enquire about a stay.",
+      `Name: ${name.trim() || "-"}`,
+      `Phone: ${phone.trim() || "-"}`,
+      `Check-in: ${checkIn || "flexible"}`,
+      `Check-out: ${checkOut || "flexible"}`,
+      `Guests: ${guestsLabel(guests)}`,
+    ];
+    if (nights > 0) lines.push(`Nights: ${nights}`);
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+  }, [name, phone, checkIn, checkOut, guests, nights]);
+
+  const handleEnquire = () => {
+    if (!name.trim() || !phone.trim()) {
+      setMissing(true);
+      return;
+    }
+    setMissing(false);
+    window.open(waHref, "_blank", "noopener");
+    setSent(true);
+  };
 
   return (
     <section id="contact" className="pb-16 lg:pb-24">
