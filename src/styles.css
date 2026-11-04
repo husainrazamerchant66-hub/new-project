@@ -1,6 +1,6 @@
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
+@source "../src";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -63,6 +63,12 @@
 
 :root {
   --radius: 0.625rem;
+  --qh-cream: oklch(0.97 0.015 85);
+  --qh-cream-deep: oklch(0.93 0.025 80);
+  --qh-pine: oklch(0.26 0.05 155);
+  --qh-pine-deep: oklch(0.2 0.045 155);
+  --qh-brass: oklch(0.68 0.12 85);
+  --qh-ink: oklch(0.22 0.03 90);
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -142,3 +148,62 @@
     color: var(--color-foreground);
   }
 }
+
+/* GoIDE: sin zoom en celular al escribir (v2) */
+@media (hover: none) and (pointer: coarse) {
+  input, select, textarea { font-size: max(16px, 1em) !important; }
+}
+/* sin deslizar de lado: nada mas ancho que la pantalla (clip no rompe position: sticky) */
+html, body { max-width: 100%; }
+@supports (overflow-x: clip) { html, body { overflow-x: clip; } }
+@supports not (overflow-x: clip) { body { overflow-x: hidden; } }
+/* /GoIDE zoom */
+
+/* GoIDE: oculta la insignia "Edit with Lovable" (v2) */
+#lovable-badge, [id^="lovable-badge"], [id*="lovable-badge"], [class*="lovable-badge"], aside[id*="lovable" i], a[href*="utm_source=lovable-badge"], a[href*="lovable.dev"][href*="utm_campaign=lovable-badge"] { display:none !important; visibility:hidden !important; opacity:0 !important; pointer-events:none !important }
+/* /GoIDE */
+
+/* Quinte Hills — house style */
+.font-display { font-family: "Fraunces", Georgia, "Times New Roman", serif; }
+body { font-family: "Inter", system-ui, -apple-system, sans-serif; }
+.qh-ground { background-color: var(--qh-cream); color: var(--qh-ink); }
+.qh-pine { background-color: var(--qh-pine); }
+.qh-pine-deep { background-color: var(--qh-pine-deep); }
+.qh-brass-text { color: var(--qh-brass); }
+.qh-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  background-color: var(--qh-pine); color: #fff; border-radius: 999px;
+  padding: 0.85rem 1.75rem; font-weight: 600; font-size: 1rem;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+.qh-btn:hover { background-color: var(--qh-pine-deep); transform: translateY(-1px); }
+.qh-btn-light {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  background-color: #fff; color: var(--qh-pine); border-radius: 999px;
+  padding: 0.85rem 1.75rem; font-weight: 600; font-size: 1rem;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+.qh-btn-light:hover { transform: translateY(-1px); opacity: 0.94; }
+.qh-outline {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  border: 1.5px solid currentColor; border-radius: 999px;
+  padding: 0.8rem 1.6rem; font-weight: 600; font-size: 1rem;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+.qh-outline:hover { transform: translateY(-1px); }
+.qh-frame { max-width: 76rem; margin-inline: auto; padding-inline: 1.25rem; }
+@media (min-width: 768px) { .qh-frame { padding-inline: 2rem; } }
+.qh-h2 {
+  font-family: "Fraunces", Georgia, serif; font-weight: 500;
+  font-size: clamp(2rem, 4.5vw, 3.25rem); line-height: 1.05; letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.qh-lead { font-size: 1.125rem; line-height: 1.6; }
+.qh-js .reveal { opacity: 0; transform: translateY(26px); transition: opacity 700ms ease, transform 700ms ease; }
+.qh-js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .qh-js .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation: none !important; }
+}
+.qh-drift { animation: qh-drift 24s ease-in-out infinite alternate; }
+@keyframes qh-drift { from { transform: scale(1); } to { transform: scale(1.08); } }
