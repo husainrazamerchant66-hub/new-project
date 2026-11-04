@@ -126,6 +126,30 @@ export default function Contact() {
               />
             </label>
           </div>
+          <div className="mt-3 grid grid-cols-2 gap-3">
+            <label className="block">
+              <span className="text-xs font-medium opacity-70">Your name</span>
+              <input
+                type="text"
+                value={name}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+                placeholder="e.g. Aarav"
+                className="mt-1 w-full rounded-xl border px-3 py-2.5 text-sm"
+                style={{ borderColor: "rgba(0,0,0,0.15)" }}
+              />
+            </label>
+            <label className="block">
+              <span className="text-xs font-medium opacity-70">Phone number</span>
+              <input
+                type="tel"
+                value={phone}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
+                placeholder="e.g. 98765 43210"
+                className="mt-1 w-full rounded-xl border px-3 py-2.5 text-sm"
+                style={{ borderColor: "rgba(0,0,0,0.15)" }}
+              />
+            </label>
+          </div>
           <label className="mt-3 block">
             <span className="text-xs font-medium opacity-70">Guests</span>
             <select
