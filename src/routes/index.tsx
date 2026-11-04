@@ -7,6 +7,8 @@ import Amenities from "../components/quinte/Amenities";
 import Location from "../components/quinte/Location";
 import Contact from "../components/quinte/Contact";
 import { useReveal } from "../components/quinte/use-reveal";
+import bedroom from "@/assets/bedroom.jpg.asset.json";
+import lounge from "@/assets/lounge.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -24,14 +26,14 @@ const NAV = [
 const ROOMS = [
   {
     name: "Deluxe Valley Room",
-    img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop",
+    img: bedroom.url,
     desc: "Cosy rooms with garden or valley views off the curved balconies. King bed, sit-out corner, tea kit.",
     points: ["Sleeps 2–3", "Balcony sit-out", "High-speed Wi-Fi"],
     price: "₹4,500",
   },
   {
     name: "Family Garden Suite",
-    img: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop",
+    img: lounge.url,
     desc: "Extra space opening onto the lawn — room for kids to run while you finish your chai in peace.",
     points: ["Sleeps 4–5", "Garden access", "Smart TV"],
     price: "₹6,800",
