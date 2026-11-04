@@ -81,7 +81,7 @@ export default function Contact() {
                 href={o.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold"
+                className="qh-chip inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold"
                 style={{ backgroundColor: "rgba(255,255,255,0.12)", color: "#fff" }}
               >
                 Book on {o.label} <ExternalLink size={14} />

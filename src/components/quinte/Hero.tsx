@@ -1,5 +1,6 @@
 import { Star, MapPin, Instagram } from "lucide-react";
 import { useReveal } from "./use-reveal";
+import poolDay from "@/assets/pool-day.jpg.asset.json";
 
 export default function Hero() {
   useReveal();
@@ -53,12 +54,12 @@ export default function Hero() {
         </div>
         <figure className="reveal overflow-hidden rounded-3xl bg-white/10 shadow-2xl backdrop-blur">
           <img
-            src="/subida-528eb07a.jpg"
-            alt="Swimming pool and paved courtyard of Quinte Hills Residency in the monsoon"
+            src={poolDay.url}
+            alt="Blue sky over the swimming pool and paved courtyard of Quinte Hills Residency"
             className="aspect-[4/3] w-full object-cover"
           />
           <figcaption className="px-5 py-4 text-sm font-medium text-white">
-            The pool deck after the rains — swim facing the green hills.
+            Blue-sky afternoons on the pool deck — swim facing the hills.
           </figcaption>
         </figure>
       </div>

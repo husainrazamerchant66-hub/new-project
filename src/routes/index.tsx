@@ -7,6 +7,8 @@ import Amenities from "../components/quinte/Amenities";
 import Location from "../components/quinte/Location";
 import Contact from "../components/quinte/Contact";
 import { useReveal } from "../components/quinte/use-reveal";
+import bedroom from "@/assets/bedroom.jpg.asset.json";
+import lounge from "@/assets/lounge.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -24,14 +26,14 @@ const NAV = [
 const ROOMS = [
   {
     name: "Deluxe Valley Room",
-    img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop",
+    img: bedroom.url,
     desc: "Cosy rooms with garden or valley views off the curved balconies. King bed, sit-out corner, tea kit.",
     points: ["Sleeps 2–3", "Balcony sit-out", "High-speed Wi-Fi"],
     price: "₹4,500",
   },
   {
     name: "Family Garden Suite",
-    img: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop",
+    img: lounge.url,
     desc: "Extra space opening onto the lawn — room for kids to run while you finish your chai in peace.",
     points: ["Sleeps 4–5", "Garden access", "Smart TV"],
     price: "₹6,800",
@@ -73,7 +75,7 @@ function Header() {
         </a>
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
           {NAV.map((n) => (
-            <a key={n.href} href={n.href} className="text-sm font-medium opacity-80 transition-opacity hover:opacity-100">
+            <a key={n.href} href={n.href} className="qh-navlink text-sm font-medium opacity-80">
               {n.label}
             </a>
           ))}
@@ -98,7 +100,7 @@ function Header() {
         <nav className="border-t px-5 py-4 lg:hidden" style={{ backgroundColor: "var(--qh-cream)", borderColor: "rgba(0,0,0,0.08)" }} aria-label="Mobile">
           <div className="flex flex-col gap-1">
             {NAV.map((n) => (
-              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-base font-medium">
+              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="qh-tap rounded-lg px-3 py-2.5 text-base font-medium">
                 {n.label}
               </a>
             ))}
@@ -127,7 +129,7 @@ function Index() {
           { k: "Pool", v: "With jacuzzi & hill view" },
           { k: "8 – 10", v: "Guests in the full bungalow" },
         ].map((s) => (
-          <div key={s.k} className="rounded-2xl px-5 py-5" style={{ backgroundColor: "var(--qh-cream-deep)" }}>
+          <div key={s.k} className="qh-card reveal rounded-2xl px-5 py-5" style={{ backgroundColor: "var(--qh-cream-deep)" }}>
             <p className="font-display text-3xl font-semibold" style={{ color: "var(--qh-pine)" }}>{s.k}</p>
             <p className="mt-1 text-sm opacity-70">{s.v}</p>
           </div>
@@ -147,8 +149,8 @@ function Index() {
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {ROOMS.map((r) => (
-              <article key={r.name} className="reveal overflow-hidden rounded-3xl" style={{ backgroundColor: "rgba(255,255,255,0.07)" }}>
-                <img src={r.img} alt={r.name} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+              <article key={r.name} className="qh-card reveal overflow-hidden rounded-3xl" style={{ backgroundColor: "rgba(255,255,255,0.07)" }}>
+                <img src={r.img} alt={r.name} className="qh-card-img aspect-[4/3] w-full object-cover" loading="lazy" />
                 <div className="p-6">
                   <div className="flex items-baseline justify-between gap-2">
                     <h3 className="font-display text-2xl font-medium">{r.name}</h3>
@@ -165,7 +167,7 @@ function Index() {
               </article>
             ))}
           </div>
-          <p className="reveal mt-6 text-xs opacity-60">Room names and rates are samples — please confirm actual inventory and tariffs before launch.</p>
+          <p className="reveal mt-6 text-xs opacity-60">Rates are indicative — confirm live tariffs on the booking platforms or over WhatsApp.</p>
         </div>
       </section>
 
@@ -186,7 +188,7 @@ function Index() {
           </div>
           <div className="mt-8 grid gap-5 lg:grid-cols-3">
             {REVIEWS.map((r) => (
-              <figure key={r.quote} className="reveal rounded-3xl p-7" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+              <figure key={r.quote} className="qh-card reveal rounded-3xl p-7" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
                 <Star size={20} fill="currentColor" className="qh-brass-text" />
                 <blockquote className="mt-4 font-display text-xl leading-snug">“{r.quote}”</blockquote>
                 <figcaption className="mt-4 text-sm opacity-70">{r.meta}</figcaption>
@@ -199,7 +201,7 @@ function Index() {
               href="https://www.tripadvisor.in/Hotel_Review-g297653-d34105839-Reviews-Quinte_Hills_Residency-Panchgani_Satara_District_Maharashtra.html"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold"
+              className="qh-chip inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold"
               style={{ backgroundColor: "rgba(255,255,255,0.12)", color: "#fff" }}
             >
               Read reviews on Tripadvisor <ExternalLink size={14} />
@@ -220,19 +222,19 @@ function Index() {
           <p className="mt-2 text-center text-sm opacity-70">A boutique hillside residency · Panchgani, Maharashtra</p>
           <div className="mt-8 flex flex-col items-center justify-between gap-5 border-t pt-6 sm:flex-row" style={{ borderColor: "rgba(255,255,255,0.15)" }}>
             <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm opacity-80">
-              {NAV.map((n) => (<a key={n.href} href={n.href} className="hover:opacity-100">{n.label}</a>))}
+              {NAV.map((n) => (<a key={n.href} href={n.href} className="qh-navlink">{n.label}</a>))}
             </div>
             <div className="flex items-center gap-2">
-              <a href="https://www.instagram.com/quintehillsresidency/" target="_blank" rel="noreferrer" aria-label="Instagram" className="inline-flex h-10 w-10 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.12)" }}>
+              <a href="https://www.instagram.com/quintehillsresidency/" target="_blank" rel="noreferrer" aria-label="Instagram" className="qh-icon-btn inline-flex h-10 w-10 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.12)" }}>
                 <Instagram size={18} />
               </a>
-              <a href="https://share.google/xoudzc0CYBdhMAta0" target="_blank" rel="noreferrer" aria-label="Directions on Google Maps" className="inline-flex h-10 w-10 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.12)" }}>
+              <a href="https://share.google/xoudzc0CYBdhMAta0" target="_blank" rel="noreferrer" aria-label="Directions on Google Maps" className="qh-icon-btn inline-flex h-10 w-10 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.12)" }}>
                 <MapPin size={18} />
               </a>
             </div>
           </div>
           <p className="mt-6 text-center text-xs opacity-50">
-            Bungalow and pool photos are the property's own. Interior shots are placeholders until real room photos are added.
+            All photos are of the property itself — the bungalow, pool deck, lounge and rooms.
           </p>
         </div>
       </footer>

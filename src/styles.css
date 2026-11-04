@@ -207,3 +207,64 @@ body { font-family: "Inter", system-ui, -apple-system, sans-serif; }
 }
 .qh-drift { animation: qh-drift 24s ease-in-out infinite alternate; }
 @keyframes qh-drift { from { transform: scale(1); } to { transform: scale(1.08); } }
+
+/* Quinte Hills — rich hover & press feedback */
+.qh-card { transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1); }
+.qh-card-img { transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1); }
+.qh-zoom { transition: box-shadow 320ms ease; }
+.qh-zoom img { transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1); }
+.qh-navlink { position: relative; transition: opacity 220ms ease; }
+.qh-navlink::after {
+  content: ""; position: absolute; left: 0; right: 100%; bottom: -4px; height: 2px;
+  border-radius: 2px; background: currentColor;
+  transition: right 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.qh-chip { transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), background-color 220ms ease, box-shadow 220ms ease; }
+.qh-icon-btn { transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), background-color 220ms ease; }
+.qh-ico { transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1); }
+.qh-tap { transition: background-color 180ms ease, transform 180ms ease; }
+#contact input:focus, #contact select:focus {
+  outline: none; border-color: var(--qh-pine);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--qh-pine) 18%, transparent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .qh-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 32px -12px color-mix(in oklab, var(--qh-pine) 65%, transparent);
+  }
+  .qh-btn-light:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 32px -12px color-mix(in oklab, var(--qh-ink) 45%, transparent);
+  }
+  .qh-outline:hover {
+    transform: translateY(-3px) scale(1.02);
+    background-color: color-mix(in oklab, currentColor 12%, transparent);
+  }
+  .qh-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 26px 48px -20px color-mix(in oklab, var(--qh-pine) 55%, transparent);
+  }
+  .qh-card:hover .qh-card-img { transform: scale(1.06); }
+  .qh-zoom:hover {
+    box-shadow: 0 26px 48px -22px color-mix(in oklab, var(--qh-pine) 55%, transparent);
+  }
+  .qh-zoom:hover img { transform: scale(1.07); }
+  .qh-navlink:hover { opacity: 1; }
+  .qh-navlink:hover::after { right: 0; }
+  .qh-chip:hover {
+    transform: translateY(-2px);
+    background-color: color-mix(in oklab, currentColor 16%, transparent);
+  }
+  .qh-icon-btn:hover { transform: translateY(-2px) scale(1.1); background-color: color-mix(in oklab, currentColor 20%, transparent); }
+  .qh-ico:hover { transform: scale(1.14) rotate(-5deg); }
+}
+
+/* Touch devices: visible press feedback on tap */
+@media (hover: none) {
+  .qh-btn:active, .qh-btn-light:active, .qh-outline:active,
+  .qh-chip:active, .qh-icon-btn:active { transform: scale(0.93); }
+  .qh-card:active { transform: scale(0.97); }
+  .qh-zoom:active img { transform: scale(1.04); }
+  .qh-tap:active { background-color: color-mix(in oklab, var(--qh-pine) 10%, transparent); transform: scale(0.98); }
+}
