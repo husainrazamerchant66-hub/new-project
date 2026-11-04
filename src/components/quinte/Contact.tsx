@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
-import { Check, CalendarDays, ExternalLink, Instagram, ChevronDown, Phone } from "lucide-react";
+import { CalendarDays, ExternalLink, Instagram, ChevronDown, Phone, MessageCircle } from "lucide-react";
 import { useReveal } from "./use-reveal";
+
+export const WHATSAPP_NUMBER = "919933998880";
 
 const OTA_LINKS = [
   { label: "Booking.com", href: "https://www.booking.com/hotel/in/quinte-hills-residency.html" },
