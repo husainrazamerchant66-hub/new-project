@@ -172,12 +172,19 @@ export default function Contact() {
             <p className="mt-3 text-xs opacity-60">Pick dates to start your enquiry.</p>
           )}
           {!sent ? (
-            <button type="button" className="qh-btn mt-4 w-full" onClick={() => setSent(true)}>
-              <Check size={18} /> Request callback
-            </button>
+            <>
+              <button type="button" className="qh-btn mt-4 w-full" onClick={handleEnquire}>
+                <MessageCircle size={18} /> Enquire on WhatsApp
+              </button>
+              {missing && (
+                <p className="mt-2 rounded-xl px-3 py-2 text-center text-xs font-medium" style={{ backgroundColor: "var(--qh-cream-deep)" }}>
+                  Please add your name and phone number so we can call you back.
+                </p>
+              )}
+            </>
           ) : (
             <p className="mt-4 rounded-xl px-3 py-3 text-center text-sm font-medium" style={{ backgroundColor: "var(--qh-pine)", color: "#fff" }}>
-              Noted! We will confirm availability for {guests} guests shortly.
+              Opening WhatsApp with your enquiry — if it didn't open, <a href={waHref} target="_blank" rel="noreferrer" className="underline">tap here</a>.
             </p>
           )}
         </div>
