@@ -296,8 +296,8 @@ function Index() {
       <section className="relative flex min-h-[100svh] items-end overflow-hidden">
         <div className="absolute inset-0" aria-hidden="true">
           <img
-            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2000&auto=format&fit=crop"
-            alt=""
+            src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2000&auto=format&fit=crop"
+            alt="Quinte Hills Residency bungalow exterior with garden — replace with real photo"
             className="qh-drift h-full w-full object-cover"
           />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(12,24,18,0.82) 0%, rgba(12,24,18,0.35) 45%, rgba(12,24,18,0.15) 100%)" }} />
