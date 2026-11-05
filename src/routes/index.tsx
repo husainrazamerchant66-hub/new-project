@@ -27,21 +27,21 @@ const NAV = [
 const ROOMS = [
   {
     name: "Deluxe Valley Room",
-    img: bedroom.url,
+    img: bedroomSuite.url,
     desc: "Cosy rooms with garden or valley views off the curved balconies. King bed, sit-out corner, tea kit.",
     points: ["Sleeps 2–3", "Balcony sit-out", "High-speed Wi-Fi"],
     price: "₹4,500",
   },
   {
     name: "Family Garden Suite",
-    img: lounge.url,
-    desc: "Extra space opening onto the lawn — room for kids to run while you finish your chai in peace.",
-    points: ["Sleeps 4–5", "Garden access", "Smart TV"],
+    img: livingHall.url,
+    desc: "Extra space for the whole gang — a big living-dining hall to spread out in while the kids run on the lawn.",
+    points: ["Sleeps 4–5", "Living-dining hall", "Smart TV"],
     price: "₹6,800",
   },
   {
     name: "Whole Bungalow",
-    img: "/subida-93e3e4fc.jpg",
+    img: bungalowFront.url,
     desc: "Take over the peach bungalow you see in the photos — verandahs, lawn and play area for one group.",
     points: ["Sleeps 8–10", "Private verandahs", "Caretaker on call"],
     price: "₹14,000",
