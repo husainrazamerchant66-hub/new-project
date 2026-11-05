@@ -1,5 +1,6 @@
 import { MapPin, Car } from "lucide-react";
 import { useReveal } from "./use-reveal";
+import poolReflection from "@/assets/pool-reflection.jpg.asset.json";
 
 const NEARBY = [
   { name: "Tableland", dist: "10 min", note: "Asia's second-largest mountain plateau — horse rides and sunset points." },
@@ -41,8 +42,8 @@ export default function Location() {
       </div>
       <div className="reveal overflow-hidden rounded-3xl" style={{ backgroundColor: "var(--qh-cream-deep)" }}>
         <img
-          src="/subida-528eb07a.jpg"
-          alt="Pool deck and green hills around Quinte Hills Residency"
+          src={poolReflection.url}
+          alt="The Quinte Hills bungalow mirrored in the still pool water in the morning"
           className="aspect-[16/10] w-full object-cover"
           loading="lazy"
         />

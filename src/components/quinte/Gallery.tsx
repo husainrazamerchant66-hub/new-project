@@ -1,30 +1,32 @@
 import { Camera } from "lucide-react";
 import { useReveal } from "./use-reveal";
-import poolReflection from "@/assets/pool-reflection.jpg.asset.json";
-import bungalowFront from "@/assets/bungalow-front.jpg.asset.json";
-import poolDay from "@/assets/pool-day.jpg.asset.json";
-import poolNight from "@/assets/pool-night.jpg.asset.json";
+import aerialProperty from "@/assets/aerial-property.jpg.asset.json";
+import nightCourtyard from "@/assets/night-courtyard.png.asset.json";
+import diningHall from "@/assets/dining-hall.png.asset.json";
+import gamesRoom from "@/assets/games-room.jpg.asset.json";
+import gardenLawn from "@/assets/garden-lawn.jpg.asset.json";
 
 const SHOTS = [
   {
-    src: poolReflection.url,
-    alt: "The Quinte Hills bungalow mirrored in the still pool water in the morning",
-    caption: "Morning stillness — the bungalow mirrors in the pool.",
+    src: nightCourtyard.url,
+    alt: "The Quinte Hills courtyard and pool deck lit up after dark",
+    caption: "After dark — courtyard and pool deck glowing.",
+    tall: true,
   },
   {
-    src: bungalowFront.url,
-    alt: "Front of the peach Quinte Hills bungalow with curved balconies, flowering vine and garden drive",
-    caption: "The peach face of the bungalow and the garden drive.",
+    src: diningHall.url,
+    alt: "The dining hall at Quinte Hills with green booths and a table laid with food",
+    caption: "The dining hall — home-style meals served here.",
   },
   {
-    src: poolDay.url,
-    alt: "Blue sky and clouds over the Quinte Hills pool deck",
-    caption: "Blue skies over the pool deck.",
+    src: gamesRoom.url,
+    alt: "The indoor games room at Quinte Hills with carrom, foosball and table tennis",
+    caption: "Indoor games room — carrom, foosball, table tennis.",
   },
   {
-    src: poolNight.url,
-    alt: "The Quinte Hills pool deck lit up after dark",
-    caption: "The pool deck after dark — lamps on, hills quiet.",
+    src: gardenLawn.url,
+    alt: "The garden lawn at Quinte Hills with red round sit-out tables under a blue sky",
+    caption: "The garden lawn and sit-outs under the hill sky.",
   },
 ];
 
@@ -36,7 +38,7 @@ export default function Gallery() {
         <div>
           <h2 className="qh-h2" style={{ color: "var(--qh-pine)" }}>The real thing, in pictures.</h2>
           <p className="qh-lead mt-3 max-w-xl opacity-75">
-            Shot at the property — the bungalow, the gardens and the pool deck.
+            Shot at the property — the bungalow, the gardens, the dining hall and the games room.
           </p>
         </div>
         <a
@@ -52,27 +54,26 @@ export default function Gallery() {
       <div className="qh-frame mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <figure className="qh-zoom reveal overflow-hidden rounded-2xl sm:col-span-2">
           <img
-            src="/subida-93e3e4fc.jpg"
-            alt="Front of the Quinte Hills Residency bungalow with curved balconies, flowering vine and garden"
+            src={aerialProperty.url}
+            alt="Aerial drone view of the whole Quinte Hills property — bungalow, paved courtyard, swimming pool and jacuzzi"
             className="aspect-[16/10] w-full object-cover"
           />
           <figcaption className="px-1 py-2 text-sm font-medium opacity-70">
-            The bungalow — curved balconies, flowering vines, play lawn.
-          </figcaption>
-        </figure>
-        <figure className="qh-zoom reveal overflow-hidden rounded-2xl">
-          <img
-            src="/subida-528eb07a.jpg"
-            alt="Aerial view of the Quinte Hills pool deck, jacuzzi and paved courtyard"
-            className="aspect-[16/10] h-full w-full object-cover sm:aspect-auto sm:h-[calc(100%-2rem)]"
-          />
-          <figcaption className="px-1 py-2 text-sm font-medium opacity-70">
-            The pool deck from above.
+            The whole property from above — bungalow, courtyard, pool and jacuzzi.
           </figcaption>
         </figure>
         {SHOTS.map((g) => (
           <figure key={g.src} className="qh-zoom reveal overflow-hidden rounded-2xl">
-            <img src={g.src} alt={g.alt} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+            <img
+              src={g.src}
+              alt={g.alt}
+              className={
+                g.tall
+                  ? "aspect-[4/3] h-full w-full object-cover sm:aspect-auto sm:h-[calc(100%-2rem)]"
+                  : "aspect-[4/3] w-full object-cover"
+              }
+              loading="lazy"
+            />
             <figcaption className="px-1 py-2 text-sm font-medium opacity-70">{g.caption}</figcaption>
           </figure>
         ))}
