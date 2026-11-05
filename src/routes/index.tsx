@@ -7,8 +7,9 @@ import Amenities from "../components/quinte/Amenities";
 import Location from "../components/quinte/Location";
 import Contact from "../components/quinte/Contact";
 import { useReveal } from "../components/quinte/use-reveal";
-import bedroom from "@/assets/bedroom.jpg.asset.json";
-import lounge from "@/assets/lounge.jpg.asset.json";
+import bungalowFront from "@/assets/bungalow-front.jpg.asset.json";
+import livingHall from "@/assets/living-hall.jpg.asset.json";
+import bedroomSuite from "@/assets/bedroom-suite.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
