@@ -11,6 +11,7 @@ const SHOTS = [
     src: nightCourtyard.url,
     alt: "The Quinte Hills courtyard and pool deck lit up after dark",
     caption: "After dark — courtyard and pool deck glowing.",
+    tall: true,
   },
   {
     src: diningHall.url,
@@ -63,7 +64,16 @@ export default function Gallery() {
         </figure>
         {SHOTS.map((g) => (
           <figure key={g.src} className="qh-zoom reveal overflow-hidden rounded-2xl">
-            <img src={g.src} alt={g.alt} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+            <img
+              src={g.src}
+              alt={g.alt}
+              className={
+                g.tall
+                  ? "aspect-[4/3] h-full w-full object-cover sm:aspect-auto sm:h-[calc(100%-2rem)]"
+                  : "aspect-[4/3] w-full object-cover"
+              }
+              loading="lazy"
+            />
             <figcaption className="px-1 py-2 text-sm font-medium opacity-70">{g.caption}</figcaption>
           </figure>
         ))}
