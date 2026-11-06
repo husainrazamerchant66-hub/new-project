@@ -1,6 +1,6 @@
 import { Star, MapPin, Instagram } from "lucide-react";
 import { useReveal } from "./use-reveal";
-import poolDay from "@/assets/pool-day.jpg.asset.json";
+import poolJacuzzi from "@/assets/pool-jacuzzi.jpg.asset.json";
 
 export default function Hero() {
   useReveal();

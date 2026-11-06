@@ -5,6 +5,8 @@ import nightCourtyard from "@/assets/night-courtyard.png.asset.json";
 import diningHall from "@/assets/dining-hall.png.asset.json";
 import gamesRoom from "@/assets/games-room.jpg.asset.json";
 import gardenLawn from "@/assets/garden-lawn.jpg.asset.json";
+import restaurantInterior from "@/assets/restaurant-interior.jpg.asset.json";
+import tableTennis from "@/assets/table-tennis.jpg.asset.json";
 
 const SHOTS = [
   {
