@@ -5,6 +5,8 @@ import nightCourtyard from "@/assets/night-courtyard.png.asset.json";
 import diningHall from "@/assets/dining-hall.png.asset.json";
 import gamesRoom from "@/assets/games-room.jpg.asset.json";
 import gardenLawn from "@/assets/garden-lawn.jpg.asset.json";
+import restaurantInterior from "@/assets/restaurant-interior.jpg.asset.json";
+import tableTennis from "@/assets/table-tennis.jpg.asset.json";
 
 const SHOTS = [
   {
@@ -27,6 +29,17 @@ const SHOTS = [
     src: gardenLawn.url,
     alt: "The garden lawn at Quinte Hills with red round sit-out tables under a blue sky",
     caption: "The garden lawn and sit-outs under the hill sky.",
+  },
+  {
+    src: restaurantInterior.url,
+    alt: "The restaurant interior at Quinte Hills with green booth seating and warm lighting",
+    caption: "The restaurant — your meals come from this kitchen.",
+    wide: true,
+  },
+  {
+    src: tableTennis.url,
+    alt: "Close-up of the table-tennis table at Quinte Hills with paddles and balls",
+    caption: "Table tennis — game on, any time of day.",
   },
 ];
 
@@ -63,7 +76,10 @@ export default function Gallery() {
           </figcaption>
         </figure>
         {SHOTS.map((g) => (
-          <figure key={g.src} className="qh-zoom reveal overflow-hidden rounded-2xl">
+          <figure
+            key={g.src}
+            className={`qh-zoom reveal overflow-hidden rounded-2xl${g.wide ? " sm:col-span-2" : ""}`}
+          >
             <img
               src={g.src}
               alt={g.alt}
