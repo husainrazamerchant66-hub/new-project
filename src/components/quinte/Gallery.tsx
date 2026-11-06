@@ -30,6 +30,17 @@ const SHOTS = [
     alt: "The garden lawn at Quinte Hills with red round sit-out tables under a blue sky",
     caption: "The garden lawn and sit-outs under the hill sky.",
   },
+  {
+    src: restaurantInterior.url,
+    alt: "The restaurant interior at Quinte Hills with green booth seating and warm lighting",
+    caption: "The restaurant — your meals come from this kitchen.",
+    wide: true,
+  },
+  {
+    src: tableTennis.url,
+    alt: "Close-up of the table-tennis table at Quinte Hills with paddles and balls",
+    caption: "Table tennis — game on, any time of day.",
+  },
 ];
 
 export default function Gallery() {
