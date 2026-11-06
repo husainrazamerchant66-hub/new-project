@@ -76,7 +76,10 @@ export default function Gallery() {
           </figcaption>
         </figure>
         {SHOTS.map((g) => (
-          <figure key={g.src} className="qh-zoom reveal overflow-hidden rounded-2xl">
+          <figure
+            key={g.src}
+            className={`qh-zoom reveal overflow-hidden rounded-2xl${g.wide ? " sm:col-span-2" : ""}`}
+          >
             <img
               src={g.src}
               alt={g.alt}
