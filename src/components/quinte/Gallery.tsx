@@ -98,7 +98,7 @@ export default function Gallery() {
         <figure className="qh-zoom reveal overflow-hidden rounded-2xl sm:col-span-2">
           <img
             src={droneOverhead.url}
-            alt="Aerial drone view of the whole Quinte Hills property — bungalow, paved courtyard, swimming pool and jacuzzi"
+            alt="Aerial drone view of Quinte Hills — bungalow, courtyard, swimming pool and jacuzzi"
             className="aspect-[16/10] w-full object-cover"
           />
           <figcaption className="px-1 py-2 text-sm font-medium opacity-70">
@@ -113,9 +113,7 @@ export default function Gallery() {
             <img
               src={g.src}
               alt={g.alt}
-              className={
-                "aspect-[4/3] w-full object-cover"
-              }
+              className="aspect-[4/3] w-full object-cover"
               loading="lazy"
             />
             <figcaption className="px-1 py-2 text-sm font-medium opacity-70">{g.caption}</figcaption>

@@ -1,6 +1,5 @@
 import { MapPin, Car } from "lucide-react";
 import { useReveal } from "./use-reveal";
-import poolReflection from "@/assets/pool-reflection.jpg.asset.json";
 
 const NEARBY = [
   { name: "Tableland", dist: "10 min", note: "Asia's second-largest mountain plateau — horse rides and sunset points." },
@@ -41,12 +40,6 @@ export default function Location() {
         </div>
       </div>
       <div className="reveal overflow-hidden rounded-3xl" style={{ backgroundColor: "var(--qh-cream-deep)" }}>
-        <img
-          src={poolReflection.url}
-          alt="The Quinte Hills bungalow mirrored in the still pool water in the morning"
-          className="aspect-[16/10] w-full object-cover"
-          loading="lazy"
-        />
         <iframe
           title="Map showing Panchgani, Maharashtra"
           src="https://www.openstreetmap.org/export/embed.html?bbox=73.78%2C17.88%2C73.85%2C17.95&layer=mapnik&marker=17.9184%2C73.7987"
