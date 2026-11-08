@@ -1,2 +1,2 @@
 - [x] Add new drone and games-room uploads, earlier room photos, and limit pool imagery to two photos.
-- [ ] Create an installable web app manifest with a Quinte Hills logo sourced from its Instagram profile.
+- [x] Create an installable web app manifest with a Quinte Hills logo sourced from its Instagram profile.
