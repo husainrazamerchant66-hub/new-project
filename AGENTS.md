@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep home-screen metadata in a static web manifest and public icon files; add service-worker behavior only for explicitly requested offline support.
